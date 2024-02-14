@@ -29,4 +29,4 @@ rcon пароль, rcon порт сервера
 
 Нахождение токена интеграции виджета оповещения
 
-	https://www.donationalerts.com/widget/alerts?group_id=1&token= токен интеграции виджета оповещения назодится после token= 
+	https://www.donationalerts.com/widget/alerts?group_id=1&token= токен интеграции виджета оповещения находится после token= 
