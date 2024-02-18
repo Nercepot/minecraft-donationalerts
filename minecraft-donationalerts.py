@@ -19,16 +19,22 @@ def on_message(data):
     currency = y['currency']
     message = y['message']
 
-    if (float(amount) % 10 == 0):
-        mc.connect()
-        give = 'give '
-        number = float(amount) / 10
-        numberInt = int(number)
-        name = username
-        object = ' minecraft:diamond '
-        print(give + name + object + str(numberInt))
-        mc.command(give + name + object + str(numberInt))  ## Для примера алмаз
-    else:
-        print('false')
+    def on_command():
+        if (float(amount) % 10 == 0):
+            give = 'give '
+            number = float(amount) / 10
+            numberInt = int(number)
+            name = username
+            object = ' minecraft:diamond '
+            command = give + name + object + str(numberInt)
+            return command
+        else:
+            print('false')
+
+        return on_command()
+
+    mc.connect()
+    mc.command(on_command())
+
 
 sio.connect('wss://socket.donationalerts.ru:443', transports='websocket')
